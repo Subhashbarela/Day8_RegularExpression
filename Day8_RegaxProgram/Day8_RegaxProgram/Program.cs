@@ -11,17 +11,49 @@ namespace Day8_RegaxProgram
         static void Main(string[] args)
         {
             Pattern pattern = new Pattern();
-            Console.WriteLine("Enter the string : ");
-            string str = Console.ReadLine();
-            bool isValid = pattern.CharMatch(str);
-            if (isValid)
+            Console.WriteLine("1:Charctor Checking \n2: Sequence Of Char Checking");
+            Console.WriteLine("Enter the choice");
+            int choice = int.Parse(Console.ReadLine());
+            switch (choice)
             {
-                Console.WriteLine("String is valid...!");
+                case 1:
+                    {
+                        Console.WriteLine("Enter the string : ");
+                        string str = Console.ReadLine();
+                        bool isValid = pattern.CharMatch(str);
+                        if (isValid)
+                        {
+                            Console.WriteLine("String is valid...!");
+                        }
+                        else
+                        {
+                            Console.WriteLine("String is not valid...!");
+                        }
+                        break;
+                    }
+                case 2:
+                    {
+                        Console.WriteLine("Enter the string : ");
+                        string str = Console.ReadLine();
+                        bool isValid = pattern.CharMatch(str);
+                        if (isValid)
+                        {
+                            Console.WriteLine("String is valid...!");
+                        }
+                        else
+                        {
+                            Console.WriteLine("String is not valid...!");
+                        }
+                        break;
+                    }
+                default:
+                    {
+                        Console.WriteLine("Please insert the valid number");
+                        break;
+                    }
+
             }
-            else
-            {
-                Console.WriteLine("String is not valid...!");
-            }
+
             Console.ReadLine();
         }
     }
