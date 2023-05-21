@@ -12,7 +12,7 @@ namespace Day8_RegaxProgram
         static void Main(string[] args)
         {
             Pattern pattern = new Pattern();
-            Console.WriteLine("1:Charctor Checking \n2: Sequence Of Char Checking \n3: Fetch HTML tag");
+            Console.WriteLine("1:Charctor Checking \n2: Sequence Of Char Checking \n3: Fetch HTML tag\n4: Count number of occurence of pattern in string");
             Console.WriteLine("Enter the choice");
             int choice = int.Parse(Console.ReadLine());
             switch (choice)
@@ -52,6 +52,14 @@ namespace Day8_RegaxProgram
                         string str = "<p>The <code>Regex</code> is a compiled representation of a regular expression.</p>";
                          pattern.Match_HTML_Tag(str);
                        
+                        break;
+                    }
+                case 4:
+                    {                        
+                        string str =@"foxes are omnivorous mammals belonging to several generaof the family Canidae fox.";
+                        int count= pattern.Count_Frequency_Of_String(str);
+                        Console.WriteLine($"There are {count} matches");
+
                         break;
                     }
                 default:

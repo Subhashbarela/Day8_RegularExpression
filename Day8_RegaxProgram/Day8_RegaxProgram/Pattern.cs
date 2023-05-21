@@ -11,7 +11,8 @@ namespace Day8_RegaxProgram
     {
         //public static string pattern = "^ab{2,3}";
        // public static string pattern = "^[a-z]+_[a-z]+$";
-        public static string pattern =  @"<.*?>";
+       // public static string pattern =  @"<.*?>";
+        public static string pattern = @"fox(es)?";
         public bool CharMatch(string message)
         {
             bool match = Regex.IsMatch(message, pattern);
@@ -34,6 +35,11 @@ namespace Day8_RegaxProgram
                     Console.WriteLine(m.Value);
                 }
             }
+        }
+        public int Count_Frequency_Of_String(string message)
+        {
+            var n = Regex.Matches(message, pattern, RegexOptions.Compiled |RegexOptions.IgnoreCase).Count;
+            return n;
         }
 
     }
