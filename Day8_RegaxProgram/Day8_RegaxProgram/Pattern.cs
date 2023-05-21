@@ -12,7 +12,8 @@ namespace Day8_RegaxProgram
         //public static string pattern = "^ab{2,3}";
        // public static string pattern = "^[a-z]+_[a-z]+$";
        // public static string pattern =  @"<.*?>";
-        public static string pattern = @"fox(es)?";
+       // public static string pattern = @"fox(es)?";
+        public static string pattern = @"([^\s]+(\.(?i)(jpe?g|png|gif|bmp))$)";
         public bool CharMatch(string message)
         {
             bool match = Regex.IsMatch(message, pattern);
@@ -40,6 +41,11 @@ namespace Day8_RegaxProgram
         {
             var n = Regex.Matches(message, pattern, RegexOptions.Compiled |RegexOptions.IgnoreCase).Count;
             return n;
+        }
+        public bool Image_File_Extention(string message)
+        {
+            bool match = Regex.IsMatch(message, pattern);
+            return match;
         }
 
     }

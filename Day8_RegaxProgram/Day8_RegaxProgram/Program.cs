@@ -12,7 +12,8 @@ namespace Day8_RegaxProgram
         static void Main(string[] args)
         {
             Pattern pattern = new Pattern();
-            Console.WriteLine("1:Charctor Checking \n2: Sequence Of Char Checking \n3: Fetch HTML tag\n4: Count number of occurence of pattern in string");
+            Console.WriteLine("1:Charctor Checking \n2: Sequence Of Char Checking \n3: Fetch HTML tag" +
+                "\n4: Count number of occurence of pattern in string\n5: File Type Extention");
             Console.WriteLine("Enter the choice");
             int choice = int.Parse(Console.ReadLine());
             switch (choice)
@@ -62,7 +63,23 @@ namespace Day8_RegaxProgram
 
                         break;
                     }
-                default:
+                case 5:
+                    {
+                        Console.WriteLine("Enter the string : ");
+                        string str = Console.ReadLine();
+                        bool isValid = pattern.Image_File_Extention(str);
+                        if (isValid)
+                        {
+                            Console.WriteLine("File Type extention is valid...!");
+                        }
+                        else
+                        {
+                            Console.WriteLine("File Type extention is not valid...!");
+                        }
+                        break;
+                    }
+                       
+                        default:
                     {
                         Console.WriteLine("Please insert the valid number");
                         break;
