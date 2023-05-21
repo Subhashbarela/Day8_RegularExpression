@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -9,22 +10,18 @@ namespace Day8_RegaxProgram
 {
     public class Pattern
     {
-        //public static string pattern = "^ab{2,3}";
-       // public static string pattern = "^[a-z]+_[a-z]+$";
-       // public static string pattern =  @"<.*?>";
-       // public static string pattern = @"fox(es)?";
-        public static string pattern = @"([^\s]+(\.(?i)(jpe?g|png|gif|bmp))$)";
-        public bool CharMatch(string message)
+        
+        public bool CharMatch(string message,string pattern)
         {
             bool match = Regex.IsMatch(message, pattern);
             return match;
         }
-        public bool SequenceCharMatch(string message)
+        public bool SequenceCharMatch(string message, string pattern)
         {
             bool match = Regex.IsMatch(message, pattern);
             return match;
         }
-        public void Match_HTML_Tag(string message)
+        public void Match_HTML_Tag(string message, string pattern)
         {
             var matches = Regex.Matches(message, pattern);
 
@@ -37,12 +34,17 @@ namespace Day8_RegaxProgram
                 }
             }
         }
-        public int Count_Frequency_Of_String(string message)
+        public int Count_Frequency_Of_String(string message, string pattern)
         {
             var n = Regex.Matches(message, pattern, RegexOptions.Compiled |RegexOptions.IgnoreCase).Count;
             return n;
         }
-        public bool Image_File_Extention(string message)
+        public bool Image_File_Extention(string message, string pattern)
+        {
+            bool match = Regex.IsMatch(message, pattern);
+            return match;
+        }
+        public bool URL_Address_Formate(string message, string pattern)
         {
             bool match = Regex.IsMatch(message, pattern);
             return match;
