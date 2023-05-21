@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Day8_RegaxProgram
@@ -11,7 +12,7 @@ namespace Day8_RegaxProgram
         static void Main(string[] args)
         {
             Pattern pattern = new Pattern();
-            Console.WriteLine("1:Charctor Checking \n2: Sequence Of Char Checking");
+            Console.WriteLine("1:Charctor Checking \n2: Sequence Of Char Checking \n3: Fetch HTML tag");
             Console.WriteLine("Enter the choice");
             int choice = int.Parse(Console.ReadLine());
             switch (choice)
@@ -44,6 +45,13 @@ namespace Day8_RegaxProgram
                         {
                             Console.WriteLine("String is not valid...!");
                         }
+                        break;
+                    }
+                case 3:
+                    {                        
+                        string str = "<p>The <code>Regex</code> is a compiled representation of a regular expression.</p>";
+                         pattern.Match_HTML_Tag(str);
+                       
                         break;
                     }
                 default:

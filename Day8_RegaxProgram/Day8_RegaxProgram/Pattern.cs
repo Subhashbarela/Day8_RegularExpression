@@ -10,7 +10,8 @@ namespace Day8_RegaxProgram
     public class Pattern
     {
         //public static string pattern = "^ab{2,3}";
-        public static string pattern = "^[a-z]+_[a-z]+$";
+       // public static string pattern = "^[a-z]+_[a-z]+$";
+        public static string pattern =  @"<.*?>";
         public bool CharMatch(string message)
         {
             bool match = Regex.IsMatch(message, pattern);
@@ -21,5 +22,19 @@ namespace Day8_RegaxProgram
             bool match = Regex.IsMatch(message, pattern);
             return match;
         }
+        public void Match_HTML_Tag(string message)
+        {
+            var matches = Regex.Matches(message, pattern);
+
+            if (matches.Count > 0)
+            {
+                Console.WriteLine("Match found:");
+                foreach (Match m in matches)
+                {
+                    Console.WriteLine(m.Value);
+                }
+            }
+        }
+
     }
 }
